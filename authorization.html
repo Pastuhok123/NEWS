@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- Визначення типу документа -->
+<html lang="en"> <!-- Встановлення мови документа -->
+<head> <!-- Початок вкладки head -->
+<meta charset="utf-8"/> <!-- Встановлення кодування символів -->
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/> <!-- Встановлення мета-тегу для адаптивного відображення -->
+<title>Авторизація</title> <!-- Заголовок сторінки -->
+<link rel="stylesheet" href="authentication-style.css"> <!-- Підключення зовнішнього CSS-файлу -->
+</head> <!-- Закінчення вкладки head -->
+<body> <!-- Початок вкладки body -->
+<div class="login-box"> <!-- Створення блоку для форми авторизації -->
+<h2>Авторизація</h2> <!-- Відображення заголовка -->
+<input id="username" placeholder="Username" type="text"/> <!-- Поле для введення імені користувача -->
+<input id="password" placeholder="Password" type="password"/> <!-- Поле для введення пароля -->
+<button onclick="login()">Login</button> <!-- Кнопка для відправки форми авторизації з викликом функції login() -->
+</div> <!-- Закінчення блоку для форми авторизації -->
+<script> <!-- Початок скрипту -->
+    function login() { // Функція для авторизації користувача
+    var username = document.getElementById("username").value; // Отримання значення поля "username"
+    var password = document.getElementById("password").value; // Отримання значення поля "password"
+
+    // Ваш код перевірки правильності ім'я користувача та пароля
+    // Якщо вони правильні, збережіть ім'я користувача в localStorage:
+    localStorage.setItem("loggedInUser", username); // Збереження ім'я користувача в локальному сховищі
+
+    // Потім перенаправте користувача на головну сторінку або на сторінку профілю
+    window.location.href = "index.html"; // Перенаправлення на головну сторінку
+}
+
+    </script></body> <!-- Закінчення скрипту та вкладки body -->
+</html> <!-- Закінчення HTML-документа -->
+

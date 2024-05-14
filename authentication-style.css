@@ -1,0 +1,87 @@
+/* authentication-style.css */
+
+/* Стилізація body */
+body {
+    font-family: Arial, sans-serif; /* Вибір шрифта для кращої читабельності */
+    display: flex; /* Використання flexbox для розташування */
+    justify-content: center; /* Горизонтальне центрування контенту */
+    align-items: center; /* Вертикальне центрування контенту */
+    height: 100vh; /* Заповнення висоти вікна перегляду */
+    background: linear-gradient(to bottom, hsl(211, 100%, 50%), #ffea00); /* Градієнтний фон */
+    margin: 0; /* Видалення відступів за замовчуванням */
+}
+
+/* Стилізація блоків логіну та реєстрації */
+.login-box,
+.registration-box {
+    width: 350px; /* Фіксована ширина для кращої консистентності макету */
+    height: auto; /* Регулювання висоти в залежності від контенту */
+    padding: 20px; /* Відступи всередині блоку */
+    background-color: #fff; /* Білий фон */
+    border-radius: 10px; /* Округлені кути */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тінь блока */
+    text-align: center; /* Центрування тексту всередині блоку */
+    display: flex; /* Використання flexbox для внутрішнього розташування */
+    flex-direction: column; /* Вертикальний розміщення дочірніх елементів */
+    justify-content: center; /* Вертикальне центрування контенту */
+    align-items: center; /* Горизонтальне центрування контенту */
+}
+
+/* Стилізація заголовків в блоках логіну та реєстрації */
+.login-box h2,
+.registration-box h2 {
+    font-size: 24px; /* Розмір шрифту */
+    margin-bottom: 20px; /* Відступ вниз */
+    color: #333; /* Колір тексту */
+}
+
+/* Стилізація полів вводу та кнопок */
+.login-box input,
+.registration-box input,
+.login-box button,
+.registration-box button {
+    width: 80%; /* Ширина полів вводу та кнопок */
+    padding: 10px; /* Відступи всередині полів вводу та кнопок */
+    margin-bottom: 20px; /* Відступи між полем вводу та кнопкою */
+    border: 2px solid #ccc; /* Обрамлення зі світло-сірим коліром */
+    border-radius: 5px; /* Округлені кути */
+    outline: none; /* Видалення стандартного контуру при фокусуванні */
+    font-size: 16px; /* Розмір шрифту */
+}
+
+/* Стилізація плейсхолдерів */
+.login-box input::placeholder,
+.registration-box input::placeholder {
+    color: #ccc; /* Колір тексту плейсхолдера */
+}
+
+/* Стилізація кнопок автентифікації */
+.auth-button {
+    background-color: hsl(211, 100%, 50%); /* Колір фону з використанням моделі кольору HSL */
+    color: #fff; /* Колір тексту */
+    border: none; /* Видалення рамки */
+    cursor: pointer; /* Зміна курсору при наведенні */
+    transition: background-color 0.3s; /* Плавна зміна кольору фону */
+}
+
+/* Ефект при наведенні на кнопки автентифікації */
+.auth-button:hover {
+    background-color: #0056b3; /* Зміна коліру фону при наведенні */
+}
+
+/* Стилізація кнопок у профілі користувача */
+.profile-actions button {
+    background-color: #008CBA; /* Колір фону */
+    color: #fff; /* Колір тексту */
+    border: none; /* Видалення рамки */
+    padding: 10px 20px; /* Відступи всередині кнопки */
+    font-size: 16px; /* Розмір шрифту */
+    border-radius: 5px; /* Округлені кути */
+    cursor: pointer; /* Зміна курсору при наведенні */
+    margin: 0 10px; /* Відступи між кнопками */
+}
+
+/* Ефект при наведенні на кнопки у профілі користувача */
+.profile-actions button:hover {
+    background-color: #0056b3; /* Зміна коліру фону при наведенні */
+}

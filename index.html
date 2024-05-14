@@ -1,0 +1,36 @@
+<!DOCTYPE html> <!-- Визначення типу документа -->
+<html lang="en"> <!-- Вказання мови документа -->
+<head> <!-- Початок вкладки head -->
+<meta charset="UTF-8"> <!-- Встановлення кодування символів -->
+<title>Новини</title> <!-- Заголовок сторінки -->
+<link rel="stylesheet" href="style.css"> <!-- Підключення зовнішнього CSS-файлу -->
+</head> <!-- Закінчення вкладки head -->
+<body> <!-- Початок вкладки body -->
+<h1>Новини</h1> <!-- Відображення заголовка -->
+<div class="button-container"> <!-- Створення блоку для кнопок -->
+    <input type="text" id="search-input" placeholder="Пошук по новинам..."> <!-- Поле для введення тексту -->
+    <button id="get-news" onclick="getNews(document.getElementById('search-input').value)">Отримати новини</button> <!-- Кнопка для отримання новин -->
+    <button id="registration" onclick="redirectToRegistration()">Реєстрація</button> <!-- Кнопка для переходу на сторінку реєстрації -->
+    <button id="login" onclick="redirectToLogin()">Авторизація</button> <!-- Кнопка для переходу на сторінку авторизації -->
+    <button id="profile" onclick="redirectToProfile()">Профіль</button> <!-- Кнопка для переходу на сторінку профілю -->
+</div> <!-- Закриття блоку для кнопок -->
+<div id="news-container"></div> <!-- Блок для відображення новин -->
+<script src="script.js"></script> <!-- Підключення зовнішнього JavaScript-файлу -->
+<script> <!-- Початок скрипту -->
+    function redirectToRegistration() { // Функція для переходу на сторінку реєстрації
+        window.location.href = "Registration.html"; // Перенаправлення на сторінку реєстрації
+    } 
+     
+    function redirectToLogin() { // Функція для переходу на сторінку авторизації
+        window.location.href = "authorization.html"; // Перенаправлення на сторінку авторизації
+    } 
+
+    function redirectToProfile() { // Функція для переходу на сторінку профілю
+        window.location.href = "profile.html"; // Перенаправлення на сторінку профілю
+    } 
+</script> <!-- Закінчення скрипту -->
+</body> <!-- Закінчення вкладки body -->
+</html> <!-- Закінчення HTML-документа -->
+
+
+

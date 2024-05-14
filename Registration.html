@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/> <!-- Встановлення кодування символів -->
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/> <!-- Встановлення мета-тегу для адаптивного відображення -->
+<title>Реєстрація</title> <!-- Встановлення заголовку сторінки -->
+<link rel="stylesheet"  href="authentication-style.css"> <!-- Підключення зовнішнього CSS-файлу -->
+</head>
+<body>
+<div class="registration-box"> <!-- Створення блоку для форми реєстрації -->
+<h2>Registration</h2> <!-- Заголовок форми -->
+<input id="reg_username" placeholder="Username" type="text"/> <!-- Поле введення для імені користувача -->
+<input id="reg_email" placeholder="Email" type="email"/> <!-- Поле введення для електронної пошти -->
+<input id="reg_password" placeholder="Password" type="password"/> <!-- Поле введення для пароля -->
+<input id="reg_confirm_password" placeholder="Confirm Password" type="password"/> <!-- Поле введення для підтвердження пароля -->
+<button onclick="register()">Register</button> <!-- Кнопка реєстрації з викликом функції register() -->
+</div>
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event){ // Додавання слухача подій для події submit на формі реєстрації
+        event.preventDefault(); // Зупинка стандартної дії браузера при натисканні на кнопку "submit"
+        
+        var username = document.getElementById("username").value; // Отримання значення поля "username"
+        var password = document.getElementById("password").value; // Отримання значення поля "password"
+        
+        // Збереження даних користувача в локальному сховищі (не є безпечним для реальних застосунків)
+        localStorage.setItem("registeredUsername", username); // Збереження ім'я користувача
+        localStorage.setItem("registeredPassword", password); // Збереження пароля користувача
+        
+        // Перенаправлення на сторінку авторизації після успішної реєстрації
+        window.location.href = "authorization.html"; // Приклад перенаправлення на іншу сторінку
+    });
+    </script><script>
+        function register() {
+    var username = document.getElementById("reg_username").value; // Отримання значення поля "reg_username"
+    var email = document.getElementById("reg_email").value; // Отримання значення поля "reg_email"
+    var password = document.getElementById("reg_password").value; // Отримання значення поля "reg_password"
+    var confirmPassword = document.getElementById("reg_confirm_password").value; // Отримання значення поля "reg_confirm_password"
+
+    // Ваш код перевірки правильності введених даних та реєстрації нового користувача
+    // Якщо реєстрація успішна, збережіть ім'я та електронну адресу користувача в localStorage:
+    localStorage.setItem("registeredUsername", username); // Збереження ім'я користувача
+    localStorage.setItem("registeredEmail", email); // Збереження електронної адреси користувача
+
+    // Потім перенаправте користувача на сторінку авторизації або на головну сторінку
+    window.location.href = "authorization.html"; // Приклад перенаправлення на іншу сторінку
+}
+
+    </script></body>
+</html>
+

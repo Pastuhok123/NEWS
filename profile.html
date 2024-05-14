@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль</title>
+    <link rel="stylesheet" href="authentication-style.css"> <!-- Підключення стилів -->
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Мій профіль</h1>
+        <div class="profile-info">
+            <div class="user-details" id="user-details">
+                <p><strong>Ім'я:</strong> <span id="user-name"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+            </div>
+        </div>
+        <div class="profile-actions">
+            <button onclick="editProfile()">Edit Profile</button>
+            <button onclick="changePassword()">Change Password</button>
+            <button onclick="logOut()">Log Out</button>
+        </div>
+    </div>
+
+    <script>
+        // Функція, яка викликається при завантаженні сторінки
+        window.onload = function() {
+            // Отримайте дані профілю з локального сховища браузера
+            var storedUsername = localStorage.getItem("registeredUsername");
+            var storedEmail = localStorage.getItem("registeredEmail");
+
+            // Перевірте, чи є дані профілю збереженими
+            if (storedUsername && storedEmail) {
+                // Оновіть дані на сторінці профілю за допомогою збережених даних
+                document.getElementById("user-name").textContent = storedUsername;
+                document.getElementById("user-email").textContent = storedEmail;
+            } else {
+                // Якщо дані профілю відсутні, виведіть повідомлення
+                document.getElementById("user-details").innerHTML = "<p>Інформація профілю відсутня.</p>";
+            }
+        };
+
+        // Функція для редагування профілю
+        function editProfile() {
+            // Змініть можливість редагування імені та електронної адреси користувача
+            var newName = prompt("Введіть нове ім'я:");
+            var newEmail = prompt("Введіть новий email:");
+
+            // Перевірте, чи користувач ввів нові дані
+            if (newName !== null && newEmail !== null) {
+                // Оновіть дані на сторінці
+                document.getElementById("user-name").textContent = newName;
+                document.getElementById("user-email").textContent = newEmail;
+
+                // Збережіть нові дані профілю в локальне сховище браузера
+                localStorage.setItem("registeredUsername", newName);
+                localStorage.setItem("registeredEmail", newEmail);
+            }
+        }
+        function changePassword() {
+    // Попросіть користувача ввести новий пароль за допомогою вікна prompt
+    var newPassword = prompt("Введіть новий пароль:");
+
+    // Перевірте, чи користувач ввів новий пароль
+    if (newPassword !== null && newPassword !== "") {
+        // Збережіть новий пароль у локальне сховище браузера або на сервері (залежно від вашої реалізації)
+        // Наприклад, для локального сховища браузера:
+        localStorage.setItem("userPassword", newPassword);
+
+        // Повідомте користувача про успішну зміну пароля
+        alert("Ваш пароль успішно змінено!");
+    } else {
+        // Повідомте користувача, якщо він не ввів новий пароль
+        alert("Будь ласка, введіть новий пароль.");
+    }
+}
+
+        // Функція для виходу з облікового запису
+        function logOut() {
+            // Очистіть дані профілю з локального сховища браузера
+            localStorage.removeItem("registeredUsername");
+            localStorage.removeItem("registeredEmail");
+
+            // Перенаправте користувача на сторінку авторизації після виходу
+            window.location.href = "Registration.html";
+        }
+    </script>
+</body>
+</html>
